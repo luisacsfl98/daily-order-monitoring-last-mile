@@ -8,6 +8,26 @@ The solution enables proactive decision-making by identifying critical orders **
 
 ---
 
+## Why This Matters
+
+In last-mile logistics, delays are rarely caused by lack of data — they are caused by lack of visibility and prioritization.
+
+Without a structured monitoring model:
+
+- Critical orders are identified too late  
+- Operational teams react instead of act  
+- SLA breaches become inevitable  
+
+This solution changes that by:
+
+- Identifying high-risk orders in real time  
+- Structuring operational prioritization  
+- Enabling faster intervention before SLA failure  
+
+The result is a shift from reactive execution to proactive operational control.
+
+---
+
 ## Real-World Context
 
 This project is based on a real logistics operation, handling high daily volumes across multiple regions.
@@ -60,6 +80,28 @@ All transformation logic is centralized in Power Query, ensuring consistency and
 - Delivery vs Omnichannel classification  
 - Status classification (Finalizado / Insucesso / Em Rota / Pendente)  
 - SLA monitoring rules  
+
+---
+
+### Data Enrichment via Reference Table
+
+A reference table is used to enrich the dataset with standardized dimensional data.
+
+A join operation is performed in Power Query between the main dataset and the reference table using the `Expedidor` field as the key.
+
+This reference table maps:
+
+- Store (Loja)  
+- Operational region (Praça)  
+
+This replaces traditional Excel lookups (e.g., VLOOKUP) and ensures:
+
+- Standardized regional classification  
+- Elimination of manual mapping  
+- Centralized business logic within the ETL layer  
+- Consistency across all data refreshes  
+
+---
 
 ### Example:
 
@@ -162,8 +204,8 @@ This results in a dataset that is:
 - Reduced reaction time to critical orders  
 - Enabled prioritization across thousands of daily records  
 - Improved operational visibility  
-- Standardized monitoring logic across regions  
-- Increased confidence in decision-making through validated data  
+- Increased speed of operational decision-making  
+- Increased confidence in decisions through validated data  
 
 ---
 
